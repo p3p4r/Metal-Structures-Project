@@ -1,0 +1,102 @@
+###### Get JWT token ######
+POST http://localhost:8080/project/api/login/token
+Content-Type: application/json
+
+{
+    "username": "draftsman",
+    "password": "1234456"
+}
+
+### Who am I? Autorization: Bearer
+GET http://localhost:8080/project/api/login/claims
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkNsaWVudCJdLCJleHAiOjE2MDc3MTkzMTJ9.LX72IPFwxzEtAqIW_joPhybFxIpVbJwGo4cnVvFKWLV5ao6pmqXpGGBAZGJXG2s26cfXcecqPETyYmQ-qYljDmXKTjoS117QvMTxTE39p8mB1DyjwUnMbhTjHQ231lP46K2VV6Io0yh45gUq-qyAQSg5YBk1a_DfIKIC55lm6QwBnmdHGx14iiPueKa5EN2mJwaB6zoSfJiQf4Ultu5TJkq2CYq7EdOYvnLyIthmrlHm7aPeKKspXl9rxHS0T7hppJ3CwjJL4a6PfSzxRVuIi7ywqC7oTj4ZkCGcds_fhjQz2x6pvijTsqaT2HtGHAy0Dkc4PUKCIDS30zdAoPvPCw
+###### End JWT token ######
+
+##### By Clients
+GET http://localhost:8080/project/api/clients/test
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkNsaWVudCJdLCJleHAiOjE2MDc3MDE3MzB9.Q5wGo5LVv0H8Oj7UDxlcXnI8Tk7gCyrASmToh1pBqE3L87tVSTIBFOXp7JbNxF2o-XGOO6DXWCwrfbWzzWfSzEy39eo--O3y853Aw99ch6ikKeTXaeUZVwcyZlNLhsOY0dAm7QnaFk3hZWPxEXKncVzuKVq1NLLW0z6qGOxreM3MNj6epj0IbLZ-n7mEVZgmiGBZa7Shkaq6LMmKnd_ejPJKszbmd2YLVbVT-yaYZSPAOFIS3743dDPAoMT_ZOYCVLcTvaXDwnvMOX_RUpkgUfX-NdlZly4mzMp_ca3Ly43GZ4JCwzjJgeFL6yrZWcxZNTK4c22tqhi4fJNIzCYxPw
+
+##### By Suppliers
+GET http://localhost:8080/project/api/suppliers
+Accept: application/json
+
+##### By Draftsmans
+GET http://localhost:8080/project/api/draftsmen
+Accept: application/json
+
+##### By Draftsmans
+GET http://localhost:8080/project/api/projects/status
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkNsaWVudCJdLCJleHAiOjE2MDcxMDE1ODh9.R05FX57bNJpoyLzHYnQLXAcR-X5WhZqPKMmOrltZNAMKJdy0oSEDuQXsVXQ8Zoi-RpQGEO8a-xNT20gVNsmJXWiULMocqdO6qVJf_Kqy-2SwVwI7YG9wkAHuy9d9hB5MpUsceuiGxYaPqjuHFChWx6oP2dbbASpbP5CTGLUd3EYzn1NwVBHG0wqYLKx-Rg2tNxX8PH6XAhihsNqiZeQKx7M2hCV0YTD0goTJbVmhKbkFxJa33lQOwq4Xm1nY6Xo9AzIgJKyAdQ75HIEMLOwcqWIrZzJECATGGZmRE_OaKUREiOaS5W1TyGeDziW3X5gQcocp9OKyhG3zOoAOl-bZUw
+
+#####  Draftsmans find project
+GET http://localhost:8080/project/api/projects/Project test
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkcmFmdHNtYW4iLCJpc3MiOiJxdWlja3N0YXJ0LWp3dC1pc3N1ZXIiLCJhdWQiOiJqd3QtYXVkaWVuY2UiLCJncm91cHMiOlsiRHJhZnRzbWFuIl0sImV4cCI6MTYwODMzODUzMH0.URFw8fkjLqrSc2Uid_VsiJoepDEBXxPSdWp6mCuUslss78VQuRw_oIxakbl6QScGEHknXLToyVu_RqTWQtDPpueEbjnpfz88ONBr1lXgT3ADQdRLx2ywtHGnO_80xlEk1qINhzu0H7qOLi5X3lRZcf39BL17XLi7KCy1bQe_xXghMdq_4ZdApNWPfpHsPm9SmYcNas3cdyRvdldIekCxiFOCeYrhksiPY25BKSKpsqJp64EqEYhBSdLXEDQsrq_k_UjER_-MqNqdLORqPrSHeEK2SyRog5ooEKoI1AJ1ha80Sizf3H_KMGw7tYTrAcych7-Rx13uYUtXBKx4Ik7Agw
+
+#####  Draftsmans Get all projects
+GET http://localhost:8080/project/api/draftsmen/projects
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkcmFmdHNtYW4iLCJpc3MiOiJxdWlja3N0YXJ0LWp3dC1pc3N1ZXIiLCJhdWQiOiJqd3QtYXVkaWVuY2UiLCJncm91cHMiOlsiRHJhZnRzbWFuIl0sImV4cCI6MTYwNTg5MTU3MH0.h6SP1cYcogEFzxcX8m00MVojHlcgbsPrk3Dq6EH4BTolqIT6-T-bBN_S4h-zBiXxvCio9lEHp6SLkgRgqIlH5EMG43CFiXO9hrgRiQCR3lTTeNgnFPsTRtVH7tEFDKvn23A87WCuHLz3cx49J3JSW-NDA-BmC_HkVtx-hCm7j1gxdMWH6olSinOWLmD85g4nEIS7JqeStUpamGJdc-l2rji37Vc3Dyetph4x06DRkrHeaAKyL3xlcZ9PxtNuX6boHnuJ-CBiCAbfuUUTr-ftvAedB3zej2vffv6NyNHk_wwfu2ySv0Erh4WZLxxvQViF84mF19AYOJkAyu63Mot1bg
+
+### Draftsmans INSERT new Project
+POST http://localhost:8080/project/api/draftsmen/projects
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkcmFmdHNtYW4iLCJpc3MiOiJxdWlja3N0YXJ0LWp3dC1pc3N1ZXIiLCJhdWQiOiJqd3QtYXVkaWVuY2UiLCJncm91cHMiOlsiRHJhZnRzbWFuIl0sImV4cCI6MTYwNTg5MTU3MH0.h6SP1cYcogEFzxcX8m00MVojHlcgbsPrk3Dq6EH4BTolqIT6-T-bBN_S4h-zBiXxvCio9lEHp6SLkgRgqIlH5EMG43CFiXO9hrgRiQCR3lTTeNgnFPsTRtVH7tEFDKvn23A87WCuHLz3cx49J3JSW-NDA-BmC_HkVtx-hCm7j1gxdMWH6olSinOWLmD85g4nEIS7JqeStUpamGJdc-l2rji37Vc3Dyetph4x06DRkrHeaAKyL3xlcZ9PxtNuX6boHnuJ-CBiCAbfuUUTr-ftvAedB3zej2vffv6NyNHk_wwfu2ySv0Erh4WZLxxvQViF84mF19AYOJkAyu63Mot1bg
+
+{ "name": "ProjetoX",
+    "clientUsername": "user2",
+    "draftsmanUsername": "draftsman2",
+    "projectStatus": "DRAFT"
+}
+
+### Draftsmans DELETE new Project
+DELETE http://localhost:8080/project/api/draftsmen/projects/ProjetoX
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkcmFmdHNtYW4iLCJpc3MiOiJxdWlja3N0YXJ0LWp3dC1pc3N1ZXIiLCJhdWQiOiJqd3QtYXVkaWVuY2UiLCJncm91cHMiOlsiRHJhZnRzbWFuIl0sImV4cCI6MTYwNTg5MTU3MH0.h6SP1cYcogEFzxcX8m00MVojHlcgbsPrk3Dq6EH4BTolqIT6-T-bBN_S4h-zBiXxvCio9lEHp6SLkgRgqIlH5EMG43CFiXO9hrgRiQCR3lTTeNgnFPsTRtVH7tEFDKvn23A87WCuHLz3cx49J3JSW-NDA-BmC_HkVtx-hCm7j1gxdMWH6olSinOWLmD85g4nEIS7JqeStUpamGJdc-l2rji37Vc3Dyetph4x06DRkrHeaAKyL3xlcZ9PxtNuX6boHnuJ-CBiCAbfuUUTr-ftvAedB3zej2vffv6NyNHk_wwfu2ySv0Erh4WZLxxvQViF84mF19AYOJkAyu63Mot1bg
+Content-Type: application/json
+
+### Draftsmans UPDATE  Project
+PUT http://localhost:8080/project/api/draftsmen/projects/Project XYS
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkcmFmdHNtYW4iLCJpc3MiOiJxdWlja3N0YXJ0LWp3dC1pc3N1ZXIiLCJhdWQiOiJqd3QtYXVkaWVuY2UiLCJncm91cHMiOlsiRHJhZnRzbWFuIl0sImV4cCI6MTYwNjA4NDc1NH0.NFVd4Xh_278eTyk87Cft0uOcXVLpri4ObKZTU2QJlfXig5DKsLU60ZQTM9NzLvmz_Nmymvepx860pvMNnEQ-L2o0SIT49v0RIfjsz5vOCBvQDbQbmup2Zr8JQf7KjxHBVmKlYVi56cpU1RJ1N-UCQw51LiC-d-OHJNPOUKclbR4uZIJe4rjG9AD6Chjvh2L6Vp5_xXr1Cm3b0JylBvMMJ6sZzxzOqdVKf0mjGVFAyLIR-Saoe9tV09-gk4YXplPljHVAIFDRh144-3TDzJ95aPPSeZpUBlLCErLu3Rc6GOlJWNtrA5YjIjhCQWPrmGCjbeKREGIhd_I8hRWkl2af8Q
+
+{ "name":"asda",
+    "clientUsername": "user2",
+    "draftsmanUsername": "draftsman2",
+    "projectStatus": "ON_APPROVAL"
+}
+
+#####  Client get projects by username
+GET http://localhost:8080/project/api/clients/testesss
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXNzcyIsImlzcyI6InF1aWNrc3RhcnQtand0LWlzc3VlciIsImF1ZCI6Imp3dC1hdWRpZW5jZSIsImdyb3VwcyI6WyJDbGllbnQiXSwiZXhwIjoxNjA3MDM4MjU4fQ.IeN07FWnYqfyVz8osKLGU5m_5pT3CgUIJWdLim2mC6_EAjRV3TLJE1sLiN_EfTeaahg832JCgosYBUfAiWx3HNb8rWv7cqAycl5fe1wl2zOaLVF7aPY2UAcjlH7eopkfOm1-VG2PVsaJmaSx00fyTSMvfmXvH3i7as8rqra2WvNmo9RhKd2cmXQHes_sfhofUkeVZtOChz3GFUjqBY3uNDRLHW9JE1UP6PlIP1AIj9nlZEWp6cE_wiOwllL3dN-18tRiUqfHGQmFK6NxOw7vyLhFGOilQ-BcCTxG2itppQ6qhbaE82rxBBrEGVOPOBI9kkUZQHsZAjb1QsWdXl305w
+
+### Get structures for project
+GET http://localhost:8080/project/api/structures/3
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkcmFmdHNtYW4iLCJpc3MiOiJxdWlja3N0YXJ0LWp3dC1pc3N1ZXIiLCJhdWQiOiJqd3QtYXVkaWVuY2UiLCJncm91cHMiOlsiRHJhZnRzbWFuIl0sImV4cCI6MTYwODMzODUzMH0.URFw8fkjLqrSc2Uid_VsiJoepDEBXxPSdWp6mCuUslss78VQuRw_oIxakbl6QScGEHknXLToyVu_RqTWQtDPpueEbjnpfz88ONBr1lXgT3ADQdRLx2ywtHGnO_80xlEk1qINhzu0H7qOLi5X3lRZcf39BL17XLi7KCy1bQe_xXghMdq_4ZdApNWPfpHsPm9SmYcNas3cdyRvdldIekCxiFOCeYrhksiPY25BKSKpsqJp64EqEYhBSdLXEDQsrq_k_UjER_-MqNqdLORqPrSHeEK2SyRog5ooEKoI1AJ1ha80Sizf3H_KMGw7tYTrAcych7-Rx13uYUtXBKx4Ik7Agw
+
+### Create adjudication
+POST http://localhost:8080/project/api/clients/adjudication
+Content-Type: application/json
+
+{ "id": "2",
+    "adjudicate": "OnApproval",
+    "observation": "ta muito mau isto",
+    "client": "user2",
+    "structure": "1"
+}
+
+### Draftsmans UPDATE  Project
+PUT http://localhost:8080/api/file/upload
+Content-Type: application/json
+
+{"structures": [{"id": "1"},
+               {"id": "2"}]
+}
+
+###file upload
+POST http://localhost:8080/project/api/draftsmen/projects/structure/Project XYS
+Content-Type: application/json

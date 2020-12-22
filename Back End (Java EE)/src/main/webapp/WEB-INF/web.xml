@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <context-param>
+        <param-name>resteasy.role.based.security</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Draftsmen Access</web-resource-name>
+            <url-pattern>/api/draftsmen/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Draftsman</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Clients List</web-resource-name>
+            <url-pattern>/api/clients/</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Client</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Simulator Access</web-resource-name>
+            <url-pattern>/api/simulator/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Draftsman</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Supplier Access</web-resource-name>
+            <url-pattern>/api/suppliers/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Supplier</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Projects List</web-resource-name>
+            <url-pattern>/api/projects/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Client</role-name>
+            <role-name>Draftsman</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Access to Adjudication</web-resource-name>
+            <url-pattern>/api/structures/adjudication/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>PUT</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Draftsman</role-name>
+            <role-name>Client</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Client Access to Structures</web-resource-name>
+            <url-pattern>/api/structures/*</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Draftsman</role-name>
+            <role-name>Client</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Draftsmen Access to Structures</web-resource-name>
+            <url-pattern>/api/structures/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Draftsman</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Supplier Access to Structures</web-resource-name>
+            <url-pattern>/api/structures/families/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+            <http-method>GET</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Draftsman</role-name>
+            <role-name>Supplier</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-role>
+        <description>Draftsman role</description>
+        <role-name>Draftsman</role-name>
+    </security-role>
+    <security-role>
+        <description>Client role</description>
+        <role-name>Client</role-name>
+    </security-role>
+    <security-role>
+        <description>Supplier role</description>
+        <role-name>Supplier</role-name>
+    </security-role>
+    <login-config>
+        <auth-method>BEARER_TOKEN</auth-method>
+        <realm-name>jwt-realm</realm-name>
+    </login-config>
+</web-app>
